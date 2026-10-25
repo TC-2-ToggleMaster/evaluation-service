@@ -97,6 +97,6 @@ curl "http://localhost:8004/evaluate?user_id=user-abc&flag_name=enable-new-dashb
 ```
 Saída (exemplo): `{"flag_name":"enable-new-dashboard","user_id":"user-abc","result":false}`
 
-**3. Verifique o Cache:** Execute o mesmo comando duas vezes seguidas. Na segunda vez, você verá um log "Cache HIT" no terminal do `evaluation-service`.
+**3. Verifique o Cache:** Execute o mesmo comando duas vezes seguidas. Na segunda vez, você verá um log "Cache HIT" no terminal onde `evaluation-service` está rodando.
 
 **4. Verifique a Fila SQS:** Após fazer as chamadas acima, vá até o console da AWS, abra sua fila SQS e verifique se as mensagens (`EvaluationEvent`) estão chegando.
