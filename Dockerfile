@@ -8,6 +8,7 @@ RUN go mod download
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -ldflags="-s -w" -o /out/evaluation-service .
 
+# Lightweight Linux base for running binary without including Go compiler.
 FROM alpine:3.22
 
 RUN apk add --no-cache ca-certificates tzdata \
